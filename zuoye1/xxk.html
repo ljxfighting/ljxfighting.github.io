@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#box-1{
+		width: 168px;
+		height: 32px;
+	}
+		#box-1 li{
+			float: left;
+			list-style: none;
+			width: 40px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border:1px solid #aaf;
+		}
+		#box-2 li{
+			list-style: none;
+			width: 168px;
+			height: 80px;
+			border: 1px solid #aff;
+		}
+	</style>
+</head>
+<body>
+	<ul id="box-1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<ul id="box-2">
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+	</ul>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#box-1 li").click(function(){
+			var ind=$(this).index();
+			// console.log(ind);
+			$("#box-2 li").eq(ind).css("display","block").siblings().css("display","none");
+		})
+	</script>
+</body>
+</html>
